@@ -24,6 +24,7 @@ insert_task = ("INSERT INTO tasks "
                "(titolo, contenuto, `data`, stato) "
                "VALUES (%s, %s, %s, %s)")
 
+
 def add_task():
     cnx = create_cursor()
     task_data = (request.json['titolo'], request.json['contenuto'], request.json['data'], request.json['stato'])
@@ -63,3 +64,11 @@ def delete_task(id):
     cnx.close()
     return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
+
+@app.route("/tasks/<int:id>", methods=["PUT"])
+def task_done(id):
+    cnx = create_cursor()
+    cnx.execute("UPDATE tasks SET stato = NOT stato WHERE id = %s", (id,))
+    mydb.commit()
+    cnx.close()
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
