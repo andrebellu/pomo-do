@@ -1,11 +1,8 @@
 <script>
     import Add from "../lib/Add.svelte";
     import Todo from "../lib/Todo.svelte";
-
     import { todos } from "../store.js";
-
     import { onMount } from "svelte";
-
     import { fly, fade } from "svelte/transition";
 
     let endpoint_get = "http://127.0.0.1:5000/tasks";
@@ -30,6 +27,3 @@
         {/each}
     </div>
 </main>
-
-<style>
-</style>
