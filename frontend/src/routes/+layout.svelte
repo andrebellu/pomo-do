@@ -1,17 +1,13 @@
 <script>
-  import "../app.css";
-  import Header from "../lib/Header.svelte";
+	import '../app.css';
+	import Header from '$lib/header.svelte';
 
-  import { page } from "$app/stores";
+	import { page } from '$app/stores';
 </script>
 
 <main>
-  {#if $page.url.pathname !== "/login"}
-    <Header />
-  {/if}
-
-  <slot />
+	{#if $page.path !== '/login'}
+		<Header />
+	{/if}
+	<slot />
 </main>
-
-<style>
-</style>

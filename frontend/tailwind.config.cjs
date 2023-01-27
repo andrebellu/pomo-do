@@ -2,7 +2,13 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require('daisyui')
+  ],
+  daisyui: {
+    themes: ["coffee", "dark", "light"],
+  },
+
 };
