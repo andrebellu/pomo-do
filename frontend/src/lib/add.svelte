@@ -41,6 +41,7 @@
 		aria-hidden="true"
 		href="/done">task_alt</a
 	>
+
 	<input type="checkbox" id="my-modal-6" class="modal-toggle" />
 
 	<div class="modal modal-bottom sm:modal-middle">
@@ -68,7 +69,7 @@
 				class="input input-bordered w-full mb-3"
 				placeholder="Date"
 				bind:value={datatask}
-				min="{new Date().toISOString().split('T')[0]}"
+				min={new Date().toISOString().split('T')[0]}
 			/>
 			<div class="modal-action">
 				<label for="my-modal-6" class="btn btn-outline material-symbols-outlined">undo</label>

@@ -4,16 +4,46 @@
 
 body,
 html {
-	@apply overflow-hidden h-screen;
+	@apply overflow-hidden h-screen p-0 m-0;
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.active-badge {
+	@apply bg-success text-white;
+}
+
+.item {
+	@apply transition-all duration-300;
+}
+
+.element {
+	@apply no-underline relative transition-all duration-300 cursor-pointer;
+}
+
+.element::after {
+	@apply h-px absolute bottom-0 left-0 w-full origin-bottom-left bg-white;
+	content: '';
+	transition: transform 0.25s ease-out;
+}
+
+.element::after {
+	transform: scale(0);
+}
+
+.element:hover::after {
+	transform: scale(1);
+}
+
+.element:hover {
+	@apply scale-150;
 }

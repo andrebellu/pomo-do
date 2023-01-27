@@ -33,6 +33,10 @@
 		await refresh();
 	}
 
+	async function editTodo(id) {
+		// TODO edit todo
+	}
+
 	async function refresh() {
 		const response = await fetch(url);
 		const data = await response.json();
