@@ -68,6 +68,7 @@
 				class="input input-bordered w-full mb-3"
 				placeholder="Date"
 				bind:value={datatask}
+				min="{new Date().toISOString().split('T')[0]}"
 			/>
 			<div class="modal-action">
 				<label for="my-modal-6" class="btn btn-outline material-symbols-outlined">undo</label>
