@@ -15,9 +15,11 @@
 
 <main>
 	<Add />
-	<div class="h-screen grid place-items-center gap-5 overflow-scroll m-5">
-		{#each $todos as task}
-			<Todo {task} />
-		{/each}
+	<div class="h-screen m-5 items-top flex justify-center">
+		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
+			{#each $todos as task}
+				<Todo {task} />
+			{/each}
+		</div>
 	</div>
 </main>

@@ -21,7 +21,7 @@
 
 	async function doneTodo(id) {
 		fetch(url + '/' + id, {
-			method: 'PUT',
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json'
 			},
