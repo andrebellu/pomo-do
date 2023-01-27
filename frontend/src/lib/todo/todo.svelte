@@ -1,6 +1,7 @@
 <script>
 	export let task;
 	import { todos, url } from '../../store.js';
+	import Edit from './edit.svelte';
 
 	function formatDate(date) {
 		const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -55,7 +56,7 @@
 					class="btn btn-ghost btn-circle material-symbols-outlined text-xl"
 					on:click={() => deleteTodo(task.id)}>delete</button
 				>
-				<button class="btn btn-ghost btn-circle material-symbols-outlined text-xl">edit</button>
+				<Edit {task} />
 				<button
 					class="btn btn-primary btn-circle material-symbols-outlined text-xl"
 					on:click={() => doneTodo(task.id)}>done</button
