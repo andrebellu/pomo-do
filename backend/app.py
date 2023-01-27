@@ -35,7 +35,7 @@ def add_task():
 
 def get_tasks():
     cnx = create_cursor()
-    cnx.execute("SELECT * FROM tasks")
+    cnx.execute("SELECT * FROM tasks ORDER BY `data` ASC")
     tasks = []
     for (id, titolo, data, contenuto, stato) in cnx:
         tasks.append({
