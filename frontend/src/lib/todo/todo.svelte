@@ -19,6 +19,18 @@
 		await refresh();
 	}
 
+	async function doneTodo(id) {
+		fetch(url + '/' + id, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ ...task, stato: !task.stato})
+		});
+
+		await refresh();
+	}
+
 	async function refresh() {
 		const response = await fetch(url);
 		const data = await response.json();
@@ -38,7 +50,7 @@
 					on:click={() => deleteTodo(task.id)}>delete</button
 				>
 				<button class="btn btn-ghost btn-circle material-symbols-outlined text-xl">edit</button>
-				<button class="btn btn-primary btn-circle material-symbols-outlined text-xl">done</button>
+				<button class="btn btn-primary btn-circle material-symbols-outlined text-xl" on:click={() => doneTodo(task.id)}>done</button>
 			</div>
 		</div>
 	</div>
