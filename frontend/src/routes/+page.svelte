@@ -18,7 +18,9 @@
 	<div class="h-screen m-5 items-top flex justify-center">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
 			{#each $todos as task}
-				<Todo {task} />
+				{#if task.stato === 0}
+					<Todo {task} />
+				{/if}
 			{/each}
 		</div>
 	</div>

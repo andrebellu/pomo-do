@@ -8,26 +8,28 @@
 	}
 
 	async function deleteTodo(id) {
-		fetch(url + '/' + id, {
+		const options = {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(task)
-		});
+			}
+		};
 
+		const response = await fetch(url + '/' + id, options);
+		const data = await response.json();
 		await refresh();
 	}
 
 	async function doneTodo(id) {
-		fetch(url + '/' + id, {
+		const options = {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ ...task, stato: !task.stato})
-		});
+			}
+		};
 
+		const response = await fetch(url + '/' + id, options);
+		const data = await response.json();
 		await refresh();
 	}
 
@@ -50,7 +52,10 @@
 					on:click={() => deleteTodo(task.id)}>delete</button
 				>
 				<button class="btn btn-ghost btn-circle material-symbols-outlined text-xl">edit</button>
-				<button class="btn btn-primary btn-circle material-symbols-outlined text-xl" on:click={() => doneTodo(task.id)}>done</button>
+				<button
+					class="btn btn-primary btn-circle material-symbols-outlined text-xl"
+					on:click={() => doneTodo(task.id)}>done</button
+				>
 			</div>
 		</div>
 	</div>
