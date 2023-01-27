@@ -13,3 +13,6 @@ risorse: task(titolo, contenuto, data, id, stato)
 - modificare un task: `PUT /tasks/<id>`
 - leggi tasks: `GET /tasks`
 - dettagli del tasks: `GET /tasks/<id>`
+
+### Per eseguire il server flask 
+python3 -m flask --app app.py run
