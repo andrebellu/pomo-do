@@ -15,9 +15,7 @@
 
 <main>
 	<Add />
-	<div
-		class="h-[calc(calc(100*var(--vh))-10rem)] grid place-items-center gap-5 overflow-scroll m-5"
-	>
+	<div class="h-screen grid place-items-center gap-5 overflow-scroll m-5">
 		{#each $todos as task}
 			<Todo {task} />
 		{/each}

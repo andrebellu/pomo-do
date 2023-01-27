@@ -3,14 +3,14 @@
 
 	let titolo = '';
 	let contenuto = '';
-	let data = '';
+	let datatask = '';
 	let filled = false;
 
-	function addTodo() {
+	async function addTodo() {
 		const body = {
 			titolo: titolo,
 			contenuto: contenuto,
-			data: data,
+			data: datatask,
 			stato: 0
 		};
 
@@ -22,11 +22,15 @@
 			body: JSON.stringify(body)
 		};
 
-		fetch(url, options)
-			.then((response) => response.json())
-			.then((data) => {
-				todos.update((old) => [...old, data]);
-			});
+		const response = await fetch(url, options);
+		const data = await response.json();
+		await refresh();
+	}
+
+	async function refresh() {
+		const response = await fetch(url);
+		const data = await response.json();
+		todos.set(data);
 	}
 </script>
 
@@ -63,13 +67,13 @@
 				type="date"
 				class="input input-bordered w-full mb-3"
 				placeholder="Date"
-				bind:value={data}
+				bind:value={datatask}
 			/>
 			<div class="modal-action">
 				<label for="my-modal-6" class="btn btn-outline material-symbols-outlined">undo</label>
 				<label
 					for="my-modal-6"
-					class="btn material-symbols-outlined"
+					class="btn material-symbols-outlined btn-primary"
 					on:click={addTodo}
 					on:keypress={addTodo}>add</label
 				>
