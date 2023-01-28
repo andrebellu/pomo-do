@@ -15,25 +15,20 @@
 </script>
 
 <main>
-	<Add />
-	<Filters />
+	<div class="flex items-center justify-center max-h-screen">
+		<a
+		class="text-white btn bg-info material-symbols-outlined rounded-full ml-3 hover:bg-blue-300 transition-all duration-300 ease-in-out"
+		aria-hidden="true"
+		href="/">undo</a
+	>
+	</div>
 	<div class="h-screen m-5 items-top flex justify-center">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
-			{#if $tomorrow == true}
-				{#each $todos as task}
-					{#if new Date(task.data).getDate() == new Date().getDate() + 1}
-                        {#if task.stato == true}
-						    <Todo {task} />
-                        {/if}
-					{/if}
-				{/each}
-			{:else}
-				{#each $todos as task}
-                    {#if task.stato == true}
-                        <Todo {task} />
-                    {/if}
-				{/each}
-			{/if}
+			{#each $todos as task}
+                {#if task.stato == true}
+					<Todo {task} />
+				{/if}
+			{/each}
 		</div>
 	</div>
 </main>
