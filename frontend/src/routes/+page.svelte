@@ -22,12 +22,16 @@
 			{#if $tomorrow == true}
 				{#each $todos as task}
 					{#if new Date(task.data).getDate() == new Date().getDate() + 1}
-						<Todo {task} />
+						{#if task.stato == false}
+							<Todo {task} />
+						{/if}
 					{/if}
 				{/each}
 			{:else}
 				{#each $todos as task}
-					<Todo {task} />
+					{#if task.stato == false}
+						<Todo {task} />
+					{/if}
 				{/each}
 			{/if}
 		</div>
