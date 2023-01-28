@@ -12,6 +12,16 @@
 				todos.set(data);
 			});
 	});
+
+	function isTomorrow(date) {
+		if (
+			new Date(date).getDate() == new Date().getDate() + 1 &&
+			new Date(date).getMonth() == new Date().getMonth() &&
+			new Date(date).getFullYear() == new Date().getFullYear()
+		) {
+			return true;
+		}
+	}
 </script>
 
 <main>
@@ -21,7 +31,7 @@
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
 			{#if $tomorrow == true}
 				{#each $todos as task}
-					{#if new Date(task.data).getDate() == new Date().getDate() + 1}
+					{#if isTomorrow(task.data)}
 						<Todo {task} />
 					{/if}
 				{/each}
