@@ -14,12 +14,14 @@ html {
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
 
 .active-badge {
-	@apply bg-success text-white;
+	@apply bg-transparent badge-primary;
 }
 
 .item {

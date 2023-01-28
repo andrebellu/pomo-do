@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Todo from '$lib/todo/todo.svelte';
-	import { todos, url, tomorrow, todoscopy } from '../store.js';
+	import { todos, url, tomorrow } from '../store.js';
 	import Add from '$lib/add.svelte';
 	import Filters from '../lib/filters.svelte';
 
@@ -19,13 +19,17 @@
 	<Filters />
 	<div class="h-screen m-5 items-top flex justify-center">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
-			{#key $todoscopy !== $todos}
+			{#if $tomorrow == true}
 				{#each $todos as task}
-					{#if task.stato === 0}
+					{#if new Date(task.data).getDate() == new Date().getDate() + 1}
 						<Todo {task} />
 					{/if}
 				{/each}
-			{/key}
+			{:else}
+				{#each $todos as task}
+					<Todo {task} />
+				{/each}
+			{/if}
 		</div>
 	</div>
 </main>
