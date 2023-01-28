@@ -39,7 +39,7 @@
 	<a
 		class="text-white btn bg-info material-symbols-outlined rounded-full ml-3 hover:bg-blue-300 transition-all duration-300 ease-in-out"
 		aria-hidden="true"
-		href="/done">task_alt</a
+		href="/dones">task_alt</a
 	>
 
 	<input type="checkbox" id="my-modal-6" class="modal-toggle" />

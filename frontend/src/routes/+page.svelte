@@ -36,13 +36,15 @@
 				</div>
 			{:else if $tomorrow == true}
 				{#each $todos as task}
-					{#if isTomorrow(task.data) && task.stato == 0}
-						<Todo {task} />
+					{#if isTomorrow(task.data) && task.stato == false}
+						{#if task.stato == false}
+							<Todo {task} />
+						{/if}
 					{/if}
 				{/each}
 			{:else}
 				{#each $todos as task}
-					{#if task.stato == 0}
+					{#if task.stato == false}
 						<Todo {task} />
 					{/if}
 				{/each}
