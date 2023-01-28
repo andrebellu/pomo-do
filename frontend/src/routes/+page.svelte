@@ -4,6 +4,7 @@
 	import { todos, url, tomorrow } from '../store.js';
 	import Add from '$lib/add.svelte';
 	import Filters from '../lib/filters.svelte';
+	import Spinner from '../lib/spinner.svelte';
 
 	onMount(() => {
 		fetch(url)
@@ -29,15 +30,21 @@
 	<Filters />
 	<div class="h-screen m-5 items-top flex justify-center">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
-			{#if $tomorrow == true}
+			{#if $todos.length == 0}
+				<div class="flex justify-center">
+					<Spinner />
+				</div>
+			{:else if $tomorrow == true}
 				{#each $todos as task}
-					{#if isTomorrow(task.data)}
+					{#if isTomorrow(task.data) && task.stato == 0}
 						<Todo {task} />
 					{/if}
 				{/each}
 			{:else}
 				{#each $todos as task}
-					<Todo {task} />
+					{#if task.stato == 0}
+						<Todo {task} />
+					{/if}
 				{/each}
 			{/if}
 		</div>
