@@ -49,21 +49,21 @@
 <main>
 	<div class="w-full align-middle flex my-5 gap-2 justify-center">
 		<button
-			class="badge badge-success badge-outline hover:bg-success hover:text-white cursor-pointer"
+			class="badge badge-neutral badge-outline hover:bg-success hover:text-white cursor-pointer"
 			on:click={aDate}
 			class:active-badge={isActive.aDate}
 		>
 			<span class="material-symbols-outlined text-sm">arrow_upward</span> Date
 		</button>
 		<button
-			class="badge badge-success badge-outline hover:bg-success hover:text-white cursor-pointer"
+			class="badge badge-neutral badge-outline hover:bg-success hover:text-white cursor-pointer"
 			on:click={dDate}
 			class:active-badge={isActive.dDate}
 		>
 			<span class="material-symbols-outlined text-sm">arrow_downward</span> Date
 		</button>
 		<button
-			class="badge badge-success badge-outline text-sm hover:bg-success hover:text-white cursor-pointer"
+			class="badge badge-neutral badge-outline text-sm hover:bg-success hover:text-white cursor-pointer"
 			on:click={t}
 			class:active-badge={isActive.tomorrow}
 		>
