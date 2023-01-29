@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 	import Todo from '$lib/todo/todo.svelte';
 	import { todos, url, tomorrow } from '../../../store.js';
-	import Add from '$lib/add.svelte';
-	import Filters from '../../../lib/filters.svelte';
+	import { fly, fade } from 'svelte/transition';
 
 	onMount(() => {
 		fetch(url)
@@ -14,18 +13,18 @@
 	});
 </script>
 
-<main>
+<main in:fly={{ y: 200, duration: 1000, delay: 500 }} out:fade>
 	<div class="flex items-center justify-center max-h-screen">
 		<a
-		class="text-white btn bg-info material-symbols-outlined rounded-full ml-3 hover:bg-blue-300 transition-all duration-300 ease-in-out"
-		aria-hidden="true"
-		href="/">undo</a
-	>
+			class="text-white btn bg-info material-symbols-outlined rounded-full ml-3 hover:bg-blue-300 transition-all duration-300 ease-in-out"
+			aria-hidden="true"
+			href="/">undo</a
+		>
 	</div>
 	<div class="h-screen m-5 items-top flex justify-center">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
 			{#each $todos as task}
-                {#if task.stato == true}
+				{#if task.stato == true}
 					<Todo {task} />
 				{/if}
 			{/each}

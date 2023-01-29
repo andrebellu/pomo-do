@@ -5,6 +5,7 @@
 	import Add from '$lib/add.svelte';
 	import Filters from '../lib/filters.svelte';
 	import Spinner from '../lib/spinner.svelte';
+	import { fly, fade } from 'svelte/transition';
 
 	onMount(() => {
 		fetch(url)
@@ -25,7 +26,7 @@
 	}
 </script>
 
-<main>
+<main in:fly={{ y: 200, duration: 1000, delay: 500 }} out:fade>
 	<Add />
 	<Filters />
 	<div class="h-screen m-5 items-top flex justify-center">
