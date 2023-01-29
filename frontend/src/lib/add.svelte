@@ -32,6 +32,7 @@
 		const response = await fetch(url, options);
 		const data = await response.json();
 		await refresh();
+		titolo = '', contenuto = '', datatask = '';
 	}
 
 	async function refresh() {
