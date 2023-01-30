@@ -6,15 +6,15 @@
 	let datatask = '';
 
 	function control(titolo, contenuto, datatask) {
-		if(titolo != '' && contenuto != '' && datatask != '') {
-			return "active"
-		}else {
-			return "disabled"
+		if (titolo != '' && contenuto != '' && datatask != '') {
+			return 'active';
+		} else {
+			return 'disabled';
 		}
 	}
 
 	async function addTodo() {
-			const body = {
+		const body = {
 			titolo: titolo,
 			contenuto: contenuto,
 			data: datatask,
@@ -32,7 +32,7 @@
 		const response = await fetch(url, options);
 		const data = await response.json();
 		await refresh();
-		titolo = '', contenuto = '', datatask = '';
+		(titolo = ''), (contenuto = ''), (datatask = '');
 	}
 
 	async function refresh() {
@@ -82,11 +82,14 @@
 			<div class="modal-action">
 				<label for="my-modal-6" class="btn btn-outline material-symbols-outlined">undo</label>
 				<label
-					class="btn btn-{control(titolo,contenuto, datatask)} material-symbols-outlined btn-primary"
+					class="btn btn-{control(
+						titolo,
+						contenuto,
+						datatask
+					)} material-symbols-outlined btn-primary"
 					on:click={addTodo}
 					on:keypress={addTodo}
-					for="my-modal-6"
-					>add</label
+					for="my-modal-6">add</label
 				>
 			</div>
 		</div>
