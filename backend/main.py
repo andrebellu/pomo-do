@@ -11,20 +11,6 @@ cnx = mysql.connector.connect(
 DB_NAME = "tasksDB"
 TABLES = {}
 
-'''
-TABLES["tasks"] = (
-    "CREATE TABLE `tasks` ("
-    "`id` INT(20) NOT NULL AUTO_INCREMENT,"
-    "`titolo` VARCHAR(20) NOT NULL,"
-    "`data` DATE NOT NULL,"
-    "`contenuto` TEXT NOT NULL,"
-    "`stato` BOOLEAN NOT NULL,"
-    "PRIMARY KEY (`id`)"
-    ") ENGINE=InnoDB"
-)
-'''
-
-
 TABLES["tasks"] = (
     "CREATE TABLE `tasks` ("
     "`id` INT(20) NOT NULL AUTO_INCREMENT,"

@@ -87,3 +87,11 @@ def task_done(id):
     mydb.commit()
     cnx.close()
     return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
+@app.route("/tasks/statistics", methods=["GET"])
+def view_statistics(done=0):
+    tasks = get_tasks()
+    for element in tasks:
+        if element["stato"]:
+            done += 1
+    return json.dumps({'done' : done, 'total' : len(tasks)}), 200, {'ContentType': 'application/json'}

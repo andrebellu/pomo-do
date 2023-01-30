@@ -19,9 +19,9 @@
 	>
 		<h1 class="text-4xl text-primary mx-10">Pomodò</h1>
 		<div class="flex gap-10 mx-10">
-			<h1 class="text-2xl text-primary element" href="/">Todos</h1>
-			<h1 class="text-2xl text-primary element">Pomodoro</h1>
-			<h1 class="text-2xl text-primary element">Statistics</h1>
+			<a class="text-2xl text-primary element" href="/">Todos</a>
+			<a class="text-2xl text-primary element" href="/pomodoro">Pomodoro</a>
+			<a class="text-2xl text-primary element" href="/statistics">Statistics</a>
 		</div>
 	</div>
 
