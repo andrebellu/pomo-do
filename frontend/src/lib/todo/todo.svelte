@@ -11,7 +11,7 @@
 </script>
 
 <main>
-	<div class="card w-80 h-fit p-0 bg-neutral text-neutral-content">
+	<div class="card w-80 h-fit bg-neutral text-neutral-content">
 		<div class="card-body items-center text-center">
 			<h2 class="text-3xl truncate">{task.titolo}</h2>
 			<h3 class="text-sm">{task.contenuto}</h3>

@@ -29,7 +29,7 @@
 <main in:fly={{ y: 200, duration: 1000, delay: 500 }} out:fade>
 	<Add />
 	<Filters />
-	<div class="h-[75vh] overflow-scroll m-5 items-top flex justify-center">
+	<div class="h-[75vh] overflow-scroll m-5 items-top flex justify-center scrollbar-hide">
 		<div class="max-h-full flex flex-col gap-5 scrolling-auto overflow-auto m-5 scrollbar-hide">
 			{#if $todos.length == 0}
 				<div class="flex justify-center">

@@ -21,7 +21,7 @@
 			href="/">undo</a
 		>
 	</div>
-	<div class="h-[75vh] overflow-scroll m-5 items-top flex justify-center">
+	<div class="h-[75vh] overflow-scroll m-5 items-top flex justify-center scrollbar-hide">
 		<div class="max-h-full flex flex-col gap-5 overflow-auto m-5 scrollbar-hide">
 			{#each $todos as task}
 				{#if task.stato == true}
