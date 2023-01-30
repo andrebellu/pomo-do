@@ -44,9 +44,13 @@ declare module '$env/static/private' {
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
 	export const INIT_CWD: string;
+	export const INTEL_DEV_REDIST: string;
+	export const JAVA_HOME: string;
+	export const KMP_DUPLICATE_LIB_OK: string;
 	export const LANG: string;
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
+	export const MKL_SERIAL: string;
 	export const NIEXTCCOMPILERSUPP: string;
 	export const NODE: string;
 	export const NODE_ENV: string;
@@ -89,6 +93,8 @@ declare module '$env/static/private' {
 	export const ProgramW6432: string;
 	export const PROMPT: string;
 	export const PSModulePath: string;
+	export const PT5HOME: string;
+	export const PT6HOME: string;
 	export const PT8HOME: string;
 	export const PUBLIC: string;
 	export const SESSIONNAME: string;
@@ -102,12 +108,12 @@ declare module '$env/static/private' {
 	export const USERDOMAIN_ROAMINGPROFILE: string;
 	export const USERNAME: string;
 	export const USERPROFILE: string;
-	export const VBOX_HWVIRTEX_IGNORE_SVM_IN_USE: string;
+	export const VBOX_MSI_INSTALL_PATH: string;
+	export const VS140COMNTOOLS: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
-	export const VSCODE_INJECTION: string;
 	export const windir: string;
 }
 
@@ -156,9 +162,13 @@ declare module '$env/dynamic/private' {
 		HOMEDRIVE: string;
 		HOMEPATH: string;
 		INIT_CWD: string;
+		INTEL_DEV_REDIST: string;
+		JAVA_HOME: string;
+		KMP_DUPLICATE_LIB_OK: string;
 		LANG: string;
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
+		MKL_SERIAL: string;
 		NIEXTCCOMPILERSUPP: string;
 		NODE: string;
 		NODE_ENV: string;
@@ -201,6 +211,8 @@ declare module '$env/dynamic/private' {
 		ProgramW6432: string;
 		PROMPT: string;
 		PSModulePath: string;
+		PT5HOME: string;
+		PT6HOME: string;
 		PT8HOME: string;
 		PUBLIC: string;
 		SESSIONNAME: string;
@@ -214,12 +226,12 @@ declare module '$env/dynamic/private' {
 		USERDOMAIN_ROAMINGPROFILE: string;
 		USERNAME: string;
 		USERPROFILE: string;
-		VBOX_HWVIRTEX_IGNORE_SVM_IN_USE: string;
+		VBOX_MSI_INSTALL_PATH: string;
+		VS140COMNTOOLS: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		VSCODE_GIT_IPC_HANDLE: string;
-		VSCODE_INJECTION: string;
 		windir: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: string]: string | undefined;
